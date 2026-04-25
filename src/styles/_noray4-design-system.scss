@@ -1,0 +1,176 @@
+// ─── Noray4 Design System — The Monolith Framework ───────────────────────────
+// "The Silent Navigator" — Functional Stoicism
+
+// ─── CSS Custom Properties ───────────────────────────────────────────────────
+
+:root {
+  // Light mode tokens
+  --n4-background:              #FAFAF8;
+  --n4-surface-card:            #F2F2EF;
+  --n4-surface-muted:           #E8E8E4;
+  --n4-border:                  #D4D4D0;
+  --n4-text-primary:            #111110;
+  --n4-text-secondary:          #6B6B68;
+  --n4-text-muted:              #A8A8A4;
+
+  // Spacing (4px grid)
+  --n4-space-1: 4px;
+  --n4-space-2: 8px;
+  --n4-space-4: 16px;
+  --n4-space-6: 24px;
+  --n4-space-8: 32px;
+
+  // Radius
+  --n4-radius-primary:   12px;
+  --n4-radius-secondary: 8px;
+  --n4-radius-pill:      999px;
+}
+
+.dark {
+  --n4-background:              #131312;
+  --n4-surface-card:            #1C1C1A;
+  --n4-surface-muted:           #20201E;
+  --n4-border:                  #474747;
+  --n4-text-primary:            #FFFFFF;
+  --n4-text-secondary:          #C7C7C2;
+  --n4-text-muted:              #919191;
+}
+
+// ─── Base Reset & Typography ─────────────────────────────────────────────────
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  background-color: var(--n4-background);
+  color: var(--n4-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// ─── Typography Scale ────────────────────────────────────────────────────────
+
+.n4-wordmark {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.n4-headline-l {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.n4-headline-m {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.n4-body {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.n4-body-small {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.n4-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+// ─── Hairline Border ─────────────────────────────────────────────────────────
+
+.n4-border {
+  border: 0.5px solid var(--n4-border);
+}
+
+// ─── Glassmorphism ───────────────────────────────────────────────────────────
+
+.n4-glass {
+  background-color: color-mix(in srgb, var(--n4-background) 80%, transparent);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 0.5px solid var(--n4-border);
+  box-shadow: 0 -32px 32px rgba(17, 17, 16, 0.04);
+}
+
+// ─── Buttons ─────────────────────────────────────────────────────────────────
+
+.n4-btn-primary {
+  width: 100%;
+  background-color: var(--n4-text-primary);
+  color: var(--n4-background);
+  padding: 20px 0;
+  border-radius: var(--n4-radius-primary);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+  border: none;
+  cursor: pointer;
+  transition: transform 150ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.n4-btn-secondary {
+  width: 100%;
+  background-color: transparent;
+  color: var(--n4-text-primary);
+  padding: 16px 0;
+  border-radius: var(--n4-radius-primary);
+  font-weight: 500;
+  font-size: 14px;
+  border: 0.5px solid var(--n4-text-primary);
+  cursor: pointer;
+  transition: transform 150ms ease;
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+// ─── Cards ───────────────────────────────────────────────────────────────────
+
+.n4-card {
+  background-color: var(--n4-surface-card);
+  border: 0.5px solid var(--n4-border);
+  border-radius: var(--n4-radius-primary);
+}
+
+// ─── Pills / Chips ───────────────────────────────────────────────────────────
+
+.n4-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: var(--n4-radius-pill);
+  border: 0.5px solid var(--n4-border);
+  font-size: 11.2px; // 0.7rem
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+// ─── Material Symbols Config ─────────────────────────────────────────────────
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
