@@ -1,11 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'n4-explorar',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterOutlet],
-  template: `<router-outlet />`
+  template: `<p style="color:white;padding:2rem">Explorar — En construcción</p>`
 })
-export class App {}
+export class ExplorarComponent {}

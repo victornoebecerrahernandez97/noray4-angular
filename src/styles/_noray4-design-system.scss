@@ -24,6 +24,18 @@
   --n4-radius-primary:   12px;
   --n4-radius-secondary: 8px;
   --n4-radius-pill:      999px;
+
+  // Brand colors
+  --n4-blue:             #175EC4;
+  --n4-blue-dim:         rgba(23, 94, 196, 0.15);
+  --n4-amber:            #D4881A;
+  --n4-amber-dim:        rgba(212, 136, 26, 0.15);
+
+  // Typography
+  --n4-font:             'Inter', system-ui, -apple-system, sans-serif;
+
+  // Transitions
+  --n4-transition:       150ms ease;
 }
 
 .dark {
