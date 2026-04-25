@@ -1,0 +1,119 @@
+<!-- SECCIÓN 1: Hero -->
+<section class="hero">
+  <div class="hero__content">
+    <div class="hero__label">PARA RIDERS, POR RIDERS</div>
+    <h1 class="hero__headline">
+      <span class="hero__line" data-line="1">Conecta.</span>
+      <span class="hero__line" data-line="2">Rueda.</span>
+      <span class="hero__line" data-line="3">Vuelve.</span>
+    </h1>
+    <p class="hero__sub">
+      La app que tu tripulación estaba esperando.<br>
+      Voz PTT, mapa en tiempo real y la memoria de cada salida.
+    </p>
+    <div class="hero__actions">
+      <a href="#download" class="btn-primary">Descargar gratis</a>
+      <a routerLink="/explorar" class="btn-ghost">Ver salidas activas</a>
+    </div>
+  </div>
+
+  <!-- Mock del dispositivo -->
+  <div class="hero__device">
+    <div class="hero__phone">
+      <div class="hero__phone-screen">
+        <div class="hero__live-pill">
+          <span class="hero__live-dot"></span>
+          SALIDA EN CURSO
+        </div>
+        <div class="hero__mock-stats">
+          <div class="hero__mock-stat">
+            <span class="hero__mock-value">87</span>
+            <span class="hero__mock-label">KM</span>
+          </div>
+          <div class="hero__mock-stat">
+            <span class="hero__mock-value">6</span>
+            <span class="hero__mock-label">RIDERS</span>
+          </div>
+          <div class="hero__mock-stat">
+            <span class="hero__mock-value">2h14</span>
+            <span class="hero__mock-label">TIEMPO</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN 2: Features -->
+<section class="features" id="features">
+  <div class="features__grid">
+    @for (feature of features; track feature.id) {
+      <div class="feature-card" [attr.data-index]="$index">
+        <div class="feature-card__icon">{{ feature.icon }}</div>
+        <h3 class="feature-card__title">{{ feature.title }}</h3>
+        <p class="feature-card__desc">{{ feature.desc }}</p>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- SECCIÓN 3: Live rides widget -->
+<section class="live-rides" id="live">
+  <div class="section-header">
+    <span class="section-label">EN ESTE MOMENTO</span>
+    <h2 class="section-title">Salidas activas ahora</h2>
+  </div>
+  <div class="live-rides__grid">
+    @if (loadingSalas()) {
+      @for (i of [1,2,3]; track i) {
+        <div class="sala-card sala-card--skeleton"></div>
+      }
+    } @else if (salas().length === 0) {
+      <div class="live-rides__empty">
+        <p>No hay salidas activas en este momento.</p>
+        <a routerLink="/explorar" class="btn-ghost btn-ghost--sm">Ver todas</a>
+      </div>
+    } @else {
+      @for (sala of salas(); track sala._id) {
+        <a [routerLink]="['/sala', sala._id]" class="sala-card">
+          <div class="sala-card__header">
+            <span class="n4-pill">
+              <span class="n4-live-dot"></span>
+              En curso
+            </span>
+            <span class="sala-card__riders">{{ sala.miembros.length }} riders</span>
+          </div>
+          <h3 class="sala-card__name">{{ sala.name }}</h3>
+          @if (sala.description) {
+            <p class="sala-card__desc">{{ sala.description }}</p>
+          }
+        </a>
+      }
+    }
+  </div>
+</section>
+
+<!-- SECCIÓN 4: CTA descarga -->
+<section class="download" id="download">
+  <div class="download__inner">
+    <span class="section-label">GRATIS, SIEMPRE</span>
+    <h2 class="download__title">La flota te espera</h2>
+    <p class="download__sub">Sin suscripciones. Sin anuncios. Solo riders.</p>
+    <div class="download__buttons">
+      <a href="#" class="download__store">
+        <span class="download__store-icon">⬇</span>
+        App Store
+      </a>
+      <a href="#" class="download__store">
+        <span class="download__store-icon">⬇</span>
+        Google Play
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span class="footer__brand">Noray<sup>4</sup></span>
+  <span class="footer__copy">Conecta. Rueda. Vuelve.</span>
+</footer>
