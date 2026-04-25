@@ -1,5 +1,50 @@
 <!-- SECCIÓN 1: Hero -->
 <section class="hero">
+  <div class="hero__bg" aria-hidden="true">
+    <svg
+      class="hero__routes-svg"
+      viewBox="0 0 1200 600"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid slice"
+    >
+      <!-- Ruta 1 — curva principal larga -->
+      <path
+        class="route-path route-path--1"
+        d="M -50 480 C 80 460, 150 300, 280 260 C 380 230, 440 290, 520 250
+           C 620 200, 680 120, 800 140 C 900 155, 960 220, 1050 200 C 1120 185, 1160 150, 1260 130"
+        fill="none"
+      />
+      <!-- Ruta 2 — curva media -->
+      <path
+        class="route-path route-path--2"
+        d="M -50 350 C 60 340, 140 420, 240 390 C 340 360, 380 280, 480 310
+           C 560 335, 600 400, 700 370 C 800 340, 860 260, 980 300 C 1080 330, 1150 380, 1260 360"
+        fill="none"
+      />
+      <!-- Ruta 3 — trazo corto superior -->
+      <path
+        class="route-path route-path--3"
+        d="M 200 80 C 300 60, 380 140, 500 110 C 600 85, 660 30, 780 50
+           C 880 68, 940 140, 1040 120"
+        fill="none"
+      />
+      <!-- Ruta 4 — trazo diagonal inferior -->
+      <path
+        class="route-path route-path--4"
+        d="M 0 580 C 100 540, 200 520, 340 490 C 460 465, 520 510, 640 480
+           C 760 450, 820 400, 960 420 C 1060 435, 1140 480, 1260 460"
+        fill="none"
+      />
+
+      <!-- Puntos de waypoint en los paths -->
+      <circle class="route-dot route-dot--1" cx="280" cy="260" r="4" />
+      <circle class="route-dot route-dot--2" cx="520" cy="250" r="3" />
+      <circle class="route-dot route-dot--3" cx="800" cy="140" r="4" />
+      <circle class="route-dot route-dot--4" cx="480" cy="310" r="3" />
+      <circle class="route-dot route-dot--5" cx="700" cy="370" r="4" />
+    </svg>
+  </div>
+
   <div class="hero__content">
     <div class="hero__label">PARA RIDERS, POR RIDERS</div>
     <h1 class="hero__headline">

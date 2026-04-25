@@ -65,8 +65,18 @@ export class LandingComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    this._initRoutePaths();
     this._initScrollAnimations();
     this._initHeroAnimation();
+  }
+
+  private _initRoutePaths(): void {
+    const paths = document.querySelectorAll<SVGPathElement>('.route-path');
+    paths.forEach((path) => {
+      const length = path.getTotalLength();
+      path.style.strokeDasharray = `${length}`;
+      path.style.strokeDashoffset = `${length}`;
+    });
   }
 
   private _initScrollAnimations(): void {
