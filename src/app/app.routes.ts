@@ -18,9 +18,9 @@ export const routes: Routes = [
           .then(m => m.ExplorarComponent),
       },
       {
-        path: 'salida/:id',
-        loadComponent: () => import('./features/public/salida-detalle/salida-detalle.component')
-          .then(m => m.SalidaDetalleComponent),
+        path: 'sala/:id',
+        loadComponent: () => import('./features/public/sala/sala.component')
+          .then(m => m.SalaPublicComponent),
       },
     ],
   },
