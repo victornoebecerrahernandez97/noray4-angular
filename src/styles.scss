@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-@import "tailwindcss";
-@import "./styles/noray4-design-system";
+@use "./styles/noray4-design-system" as *;
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; }
