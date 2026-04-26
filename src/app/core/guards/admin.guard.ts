@@ -6,5 +6,5 @@ export const adminGuard: CanActivateFn = () => {
   const token = inject(TokenService);
   const router = inject(Router);
   if (token.isAdmin()) return true;
-  return router.createUrlTree(['/']);
+  return router.createUrlTree(['/admin/login']);
 };

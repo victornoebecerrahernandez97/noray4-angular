@@ -111,7 +111,7 @@
   <div class="live-rides__grid">
     @if (loadingSalas()) {
       @for (i of [1,2,3]; track i) {
-        <div class="sala-card sala-card--skeleton"></div>
+        <n4-sala-card-skeleton />
       }
     } @else if (salas().length === 0) {
       <div class="live-rides__empty">

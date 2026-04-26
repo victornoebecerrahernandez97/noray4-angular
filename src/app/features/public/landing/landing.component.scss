@@ -317,37 +317,11 @@
   border-radius: var(--n4-radius-primary);
   text-decoration: none;
   transition: border-color var(--n4-transition), transform var(--n4-transition);
-  opacity: 0;
-  transform: translateY(16px);
-
-  &.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
 
   &:hover {
     border-color: var(--n4-text-primary);
     transform: translateY(-2px);
   }
-
-  &--skeleton {
-    opacity: 1;
-    transform: none;
-    background: linear-gradient(
-      90deg,
-      var(--n4-surface-card) 25%,
-      var(--n4-surface-muted) 50%,
-      var(--n4-surface-card) 75%
-    );
-    background-size: 200% 100%;
-    animation: shimmer 1.4s infinite;
-    min-height: 120px;
-  }
-}
-
-@keyframes shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
 }
 
 .sala-card__header {

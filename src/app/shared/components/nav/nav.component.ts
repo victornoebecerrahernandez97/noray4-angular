@@ -34,6 +34,7 @@ import { RouterLink } from '@angular/router';
       border: 0.5px solid var(--n4-border);
       border-radius: 14px;
       z-index: 100;
+      justify-content: space-between;
     }
     .n4-nav__logo {
       font-size: 18px;
@@ -74,4 +75,4 @@ import { RouterLink } from '@angular/router';
     }
   `]
 })
-export class NavComponent {}
+export class NavComponent { }

@@ -10,6 +10,7 @@ const BASE = 'https://web-production-66456.up.railway.app/api/v1';
 export class ApiService {
   private http = inject(HttpClient);
 
+  // Auth
   guestToken(body: GuestTokenRequest): Observable<TokenResponse> {
     return this.http.post<TokenResponse>(`${BASE}/auth/guest-token`, body);
   }
@@ -18,13 +19,24 @@ export class ApiService {
     return this.http.get<UserOut>(`${BASE}/auth/me`);
   }
 
+  login(email: string, password: string): Observable<TokenResponse> {
+    return this.http.post<TokenResponse>(`${BASE}/auth/login`, { email, password });
+  }
+
+  riderMe(): Observable<any> {
+    return this.http.get<any>(`${BASE}/riders/me`);
+  }
+
+  // Salas
   getSalas(skip = 0, limit = 20): Observable<Sala[]> {
-    return this.http.get<Sala[]>(`${BASE}/salas`, {
-      params: { skip, limit }
-    });
+    return this.http.get<Sala[]>(`${BASE}/salas`, { params: { skip, limit } });
   }
 
   getSala(id: string): Observable<Sala> {
     return this.http.get<Sala>(`${BASE}/salas/${id}`);
+  }
+
+  getAllSalas(skip = 0, limit = 50): Observable<Sala[]> {
+    return this.http.get<Sala[]>(`${BASE}/salas`, { params: { skip, limit } });
   }
 }

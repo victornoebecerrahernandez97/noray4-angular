@@ -9,6 +9,7 @@ import {
 import { RouterLink } from '@angular/router';
 import { ApiService } from '../../../core/services/api.service';
 import { Sala } from '../../../core/models/sala.model';
+import { SalaCardSkeletonComponent } from '../../../shared/components/skeleton/sala-card-skeleton.component';
 
 const FEATURES = [
   {
@@ -41,7 +42,7 @@ const FEATURES = [
   selector: 'app-landing',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink],
+  imports: [RouterLink, SalaCardSkeletonComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss',
 })
@@ -92,7 +93,7 @@ export class LandingComponent implements OnInit, AfterViewInit {
       { threshold: 0.15 }
     );
 
-    document.querySelectorAll('.feature-card, .sala-card, .download__inner')
+    document.querySelectorAll('.feature-card, .download__inner')
       .forEach((el) => observer.observe(el));
   }
 
