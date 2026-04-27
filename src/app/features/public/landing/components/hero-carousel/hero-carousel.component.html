@@ -1,0 +1,48 @@
+<section
+  class="hero-carousel"
+  (mouseenter)="onPause()"
+  (mouseleave)="onResume()"
+  [attr.data-state]="state()">
+
+  <!-- Background gradient multidimensional -->
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-bg__layer hero-bg__layer--noise"></div>
+  </div>
+
+  <!-- Lema reactivo -->
+  <div class="hero-motto" role="presentation">
+    <span class="motto-word" [attr.data-rank]="motto().conecta">Conecta</span>
+    <span class="motto-sep">·</span>
+    <span class="motto-word" [attr.data-rank]="motto().rueda">Rueda</span>
+    <span class="motto-sep">·</span>
+    <span class="motto-word" [attr.data-rank]="motto().vuelve">Vuelve</span>
+  </div>
+
+  <!-- Stage con 3 mockups -->
+  <button
+    type="button"
+    class="hero-stage"
+    aria-label="Avanzar animación"
+    (click)="onAdvance()">
+    <div class="slot slot--left"   [attr.data-rank]="positions().left">
+      <n4-phone-mockup [screen]="screens.left" />
+    </div>
+    <div class="slot slot--center" [attr.data-rank]="positions().center">
+      <n4-phone-mockup [screen]="screens.center" />
+    </div>
+    <div class="slot slot--right"  [attr.data-rank]="positions().right">
+      <n4-phone-mockup [screen]="screens.right" />
+    </div>
+  </button>
+
+  <!-- Subtitle + CTA -->
+  <div class="hero-bottom">
+    <p class="hero-subtitle">
+      La comunidad de motociclistas que se organiza, rueda en grupo y vuelve segura a casa.
+    </p>
+    <div class="hero-actions">
+      <a href="#download" class="btn btn--primary">Descargar app</a>
+      <a routerLink="/explorar" class="btn btn--ghost">Ver salidas activas</a>
+    </div>
+  </div>
+</section>

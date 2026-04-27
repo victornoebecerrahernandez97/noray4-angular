@@ -1,0 +1,224 @@
+:host { display: block; line-height: 1; }
+
+.phone {
+  position: relative;
+  width: 280px;
+  aspect-ratio: 9 / 19.5;
+  background: #0a0a0a;
+  border-radius: 38px;
+  padding: 10px;
+  box-shadow:
+    0 0 0 1.5px rgba(255,255,255,0.08),
+    0 30px 60px -15px rgba(0,0,0,0.6),
+    0 60px 120px -30px rgba(0,0,0,0.45);
+  &__notch {
+    position: absolute;
+    top: 18px; left: 50%;
+    transform: translateX(-50%);
+    width: 90px; height: 22px;
+    background: #000;
+    border-radius: 12px;
+    z-index: 10;
+  }
+  &__home {
+    position: absolute;
+    bottom: 8px; left: 50%;
+    transform: translateX(-50%);
+    width: 110px; height: 4px;
+    background: rgba(255,255,255,0.55);
+    border-radius: 999px;
+    z-index: 10;
+  }
+  &__screen {
+    width: 100%; height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+  }
+}
+
+/* SCREEN: SALA ACTIVA (mapa) */
+.screen--map {
+  width: 100%; height: 100%;
+  position: relative;
+  background: #0f1419;
+  .map-bg {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+      radial-gradient(ellipse at 30% 40%, rgba(23,94,196,0.18), transparent 60%);
+    background-size: 24px 24px, 24px 24px, 100% 100%;
+  }
+  .map-route {
+    position: absolute;
+    top: 30%; left: 15%;
+    width: 70%; height: 35%;
+    border: 2px solid #D4881A;
+    border-style: dashed;
+    border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+    border-right: none;
+    border-bottom: none;
+    opacity: 0.8;
+  }
+  .rider {
+    position: absolute;
+    width: 14px; height: 14px;
+    background: #175EC4;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 4px rgba(23,94,196,0.25);
+    &--1 { top: 32%; left: 20%; }
+    &--2 { top: 45%; left: 55%; background: #D4881A; box-shadow: 0 0 0 4px rgba(212,136,26,0.25); }
+    &--3 { top: 58%; left: 70%; }
+  }
+  .screen__panel {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: #fff;
+    border-radius: 18px 18px 0 0;
+    padding: 12px 16px 24px;
+  }
+  .panel-grip {
+    width: 36px; height: 4px;
+    background: #d4d4d4;
+    border-radius: 999px;
+    margin: 0 auto 12px;
+  }
+  .panel-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .pill--live {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: rgba(23,94,196,0.1);
+    color: #175EC4;
+    font-size: 9px;
+    font-weight: 700;
+    .dot {
+      width: 5px; height: 5px;
+      background: #175EC4;
+      border-radius: 50%;
+      animation: pulseDot 1.4s ease-in-out infinite;
+    }
+  }
+  .panel-time { font-size: 10px; color: #737373; font-weight: 600; }
+  .panel-title { font-size: 14px; font-weight: 700; color: #0a0a0a; margin-bottom: 4px; }
+  .panel-meta {
+    display: flex;
+    gap: 6px;
+    font-size: 10px;
+    color: #737373;
+  }
+}
+
+/* SCREEN: EXPLORAR */
+.screen--list {
+  width: 100%; height: 100%;
+  position: relative;
+  background: #fafafa;
+  padding: 50px 14px 14px;
+  .screen__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .head-title { font-size: 18px; font-weight: 700; color: #0a0a0a; }
+  .head-search { width: 28px; height: 28px; background: #fff; border-radius: 50%; border: 0.5px solid #e5e5e5; }
+  .screen__chips {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  .chip {
+    padding: 4px 10px;
+    background: #fff;
+    border: 0.5px solid #e5e5e5;
+    border-radius: 999px;
+    font-size: 9px;
+    color: #525252;
+    &--active { background: #0a0a0a; color: #fff; border-color: #0a0a0a; }
+  }
+  .card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .card {
+    background: #fff;
+    border: 0.5px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 10px;
+  }
+  .card-pill {
+    width: 50px; height: 12px;
+    background: #175EC4;
+    opacity: 0.15;
+    border-radius: 999px;
+    margin-bottom: 6px;
+  }
+  .card-line {
+    height: 6px;
+    background: #e5e5e5;
+    border-radius: 3px;
+    margin-top: 6px;
+    width: 70%;
+    &--lg { height: 8px; width: 85%; background: #d4d4d4; }
+  }
+  .fab {
+    position: absolute;
+    bottom: 18px; right: 18px;
+    width: 44px; height: 44px;
+    background: linear-gradient(135deg, #175EC4, #1e7ef5);
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(23,94,196,0.45);
+  }
+}
+
+/* SCREEN: PERFIL */
+.screen--profile {
+  width: 100%; height: 100%;
+  background: #fafafa;
+  position: relative;
+  .profile-cover {
+    height: 90px;
+    background: linear-gradient(135deg, #175EC4 0%, #2D4A5C 60%, #D4881A 100%);
+  }
+  .profile-avatar {
+    position: absolute;
+    top: 60px; left: 50%;
+    transform: translateX(-50%);
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: #d4d4d4;
+    border: 3px solid #fff;
+  }
+  .profile-name { margin: 30px auto 4px; width: 100px; height: 12px; background: #0a0a0a; border-radius: 4px; opacity: 0.8; }
+  .profile-handle { margin: 0 auto 16px; width: 70px; height: 8px; background: #a3a3a3; border-radius: 3px; }
+  .profile-stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 16px 16px;
+    border-bottom: 0.5px solid #e5e5e5;
+    margin-bottom: 14px;
+  }
+  .stat { text-align: center; }
+  .stat-num { width: 22px; height: 12px; background: #0a0a0a; border-radius: 3px; margin: 0 auto 4px; opacity: 0.7; }
+  .stat-lbl { width: 30px; height: 6px; background: #a3a3a3; border-radius: 2px; margin: 0 auto; }
+  .profile-section { padding: 0 16px; }
+  .sec-title { width: 60px; height: 8px; background: #525252; border-radius: 3px; margin-bottom: 10px; }
+  .sec-row { width: 100%; height: 36px; background: #fff; border: 0.5px solid #e5e5e5; border-radius: 10px; margin-bottom: 6px; }
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}

@@ -28,10 +28,10 @@ import { RouterLink } from '@angular/router';
       display: flex;
       align-items: center;
       padding: 12px 20px;
-      background: color-mix(in srgb, var(--n4-background) 75%, transparent);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 0.5px solid var(--n4-border);
+      background: rgba(10, 15, 22, 0.55);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border: 0.5px solid rgba(255, 255, 255, 0.08);
       border-radius: 14px;
       z-index: 100;
       justify-content: space-between;
@@ -40,7 +40,7 @@ import { RouterLink } from '@angular/router';
       font-size: 18px;
       font-weight: 700;
       letter-spacing: -0.04em;
-      color: var(--n4-text-primary);
+      color: rgba(255, 255, 255, 0.92);
       text-decoration: none;
       sup { color: var(--n4-blue); font-size: 12px; vertical-align: super; }
     }
@@ -53,16 +53,16 @@ import { RouterLink } from '@angular/router';
     .n4-nav__link {
       font-size: 14px;
       font-weight: 500;
-      color: var(--n4-text-secondary);
+      color: rgba(255, 255, 255, 0.65);
       text-decoration: none;
       transition: color var(--n4-transition);
-      &:hover { color: var(--n4-text-primary); }
+      &:hover { color: #fff; }
     }
     .n4-nav__cta {
       font-size: 13px;
       font-weight: 600;
-      color: var(--n4-background);
-      background: var(--n4-text-primary);
+      color: #0a0a0a;
+      background: #fff;
       text-decoration: none;
       padding: 8px 16px;
       border-radius: var(--n4-radius-pill);

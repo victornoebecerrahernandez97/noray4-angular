@@ -10,6 +10,7 @@ import { RouterLink } from '@angular/router';
 import { ApiService } from '../../../core/services/api.service';
 import { Sala } from '../../../core/models/sala.model';
 import { SalaCardSkeletonComponent } from '../../../shared/components/skeleton/sala-card-skeleton.component';
+import { HeroCarouselComponent } from './components/hero-carousel/hero-carousel.component';
 
 const FEATURES = [
   {
@@ -42,7 +43,7 @@ const FEATURES = [
   selector: 'app-landing',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, SalaCardSkeletonComponent],
+  imports: [RouterLink, SalaCardSkeletonComponent, HeroCarouselComponent],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss',
 })
@@ -66,18 +67,7 @@ export class LandingComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this._initRoutePaths();
     this._initScrollAnimations();
-    this._initHeroAnimation();
-  }
-
-  private _initRoutePaths(): void {
-    const paths = document.querySelectorAll<SVGPathElement>('.route-path');
-    paths.forEach((path) => {
-      const length = path.getTotalLength();
-      path.style.strokeDasharray = `${length}`;
-      path.style.strokeDashoffset = `${length}`;
-    });
   }
 
   private _initScrollAnimations(): void {
@@ -95,13 +85,5 @@ export class LandingComponent implements OnInit, AfterViewInit {
 
     document.querySelectorAll('.feature-card, .download__inner')
       .forEach((el) => observer.observe(el));
-  }
-
-  private _initHeroAnimation(): void {
-    const lines = document.querySelectorAll('.hero__line');
-    lines.forEach((el, i) => {
-      (el as HTMLElement).style.animationDelay = `${i * 120}ms`;
-      el.classList.add('hero__line--animate');
-    });
   }
 }
