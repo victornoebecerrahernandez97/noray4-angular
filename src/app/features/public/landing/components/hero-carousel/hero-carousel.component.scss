@@ -5,7 +5,7 @@ $ease-soft:  cubic-bezier(0.4, 0, 0.2, 1);
 
 .hero-carousel {
   position: relative;
-  min-height: 100vh;
+  min-height: 100dvh !important;
   padding: 120px 24px 80px;
   display: flex;
   flex-direction: column;
@@ -64,31 +64,34 @@ $ease-soft:  cubic-bezier(0.4, 0, 0.2, 1);
   50%       { background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 100% 50%; }
 }
 
-/* ─── LEMA reactivo ──────────────────────────────────────────────────────── */
+/* ─── LEMA — Bricolage Grotesque variable ────────────────────────────────── */
 .hero-motto {
   display: flex;
   align-items: baseline;
   gap: 14px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1;
-  text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+  font-family: var(--n4-font-display);
+  letter-spacing: -0.025em;
+  line-height: 0.95;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
   user-select: none;
+  font-feature-settings: "ss01" on, "ss02" on;
 }
 
 .motto-word {
   display: inline-block;
-  transition:
-    color 700ms $ease-soft,
-    font-size 700ms $ease-quint,
-    opacity 700ms $ease-soft,
-    transform 700ms $ease-quint,
-    filter 700ms $ease-soft;
   transform-origin: center bottom;
+  transition:
+    color 800ms $ease-soft,
+    font-size 800ms $ease-quint,
+    font-variation-settings 800ms $ease-soft,
+    opacity 800ms $ease-soft,
+    transform 800ms $ease-quint,
+    filter 800ms $ease-soft;
 
   &[data-rank='near'] {
     color: #ffffff;
-    font-size: clamp(2.8rem, 7vw, 5.2rem);
+    font-size: clamp(2.8rem, 7vw, 5.4rem);
+    font-variation-settings: "wght" 750, "wdth" 100, "opsz" 96;
     opacity: 1;
     filter: blur(0);
     transform: translateY(0) scale(1);
@@ -96,23 +99,27 @@ $ease-soft:  cubic-bezier(0.4, 0, 0.2, 1);
   &[data-rank='mid'] {
     color: rgba(255, 255, 255, 0.55);
     font-size: clamp(1.8rem, 4.5vw, 3.2rem);
-    opacity: 0.75;
+    font-variation-settings: "wght" 600, "wdth" 92, "opsz" 48;
+    opacity: 0.78;
     filter: blur(0.3px);
-    transform: translateY(0.2em) scale(0.9);
+    transform: translateY(0.2em) scale(0.92);
   }
   &[data-rank='far'] {
     color: rgba(255, 255, 255, 0.22);
     font-size: clamp(1.3rem, 3.2vw, 2.2rem);
+    font-variation-settings: "wght" 500, "wdth" 85, "opsz" 18;
     opacity: 0.5;
     filter: blur(0.6px);
-    transform: translateY(0.4em) scale(0.82);
+    transform: translateY(0.4em) scale(0.84);
   }
 }
 
 .motto-sep {
-  color: rgba(255,255,255,0.25);
+  color: rgba(255, 255, 255, 0.25);
+  font-family: var(--n4-font-display);
   font-size: clamp(1.5rem, 4vw, 2.6rem);
   font-weight: 300;
+  font-variation-settings: "wght" 300, "wdth" 100;
   transform: translateY(-0.08em);
 }
 

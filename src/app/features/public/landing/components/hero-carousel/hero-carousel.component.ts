@@ -34,9 +34,9 @@ export class HeroCarouselComponent implements OnInit {
 
   positions = computed<{ left: SlotPosition; center: SlotPosition; right: SlotPosition }>(() => {
     switch (this.state()) {
-      case 'a': return { left: 'far',  center: 'mid',  right: 'near' };
-      case 'b': return { left: 'near', center: 'far',  right: 'mid'  };
-      case 'c': return { left: 'mid',  center: 'near', right: 'far'  };
+      case 'a': return { left: 'near', center: 'mid',  right: 'far'  };
+      case 'b': return { left: 'far',  center: 'near', right: 'mid'  };
+      case 'c': return { left: 'mid',  center: 'far',  right: 'near' };
     }
   });
 
