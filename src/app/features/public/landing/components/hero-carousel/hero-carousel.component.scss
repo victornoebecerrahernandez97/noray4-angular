@@ -73,12 +73,12 @@ $ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
-/* ─── LEMA — Quicksand variable (wght 300–700) ───────────────────────────── */
+/* ─── LEMA — Rubik variable (wght 300–900) ───────────────────────────────── */
 .hero-motto {
   display: flex;
   align-items: center;
-  gap: 1rem;
   font-family: var(--n4-font-display);
+  font-optical-sizing: auto;
   letter-spacing: -0.01em;
   line-height: 0.95;
   text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
@@ -90,7 +90,7 @@ $ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .motto-word {
-  display: contents;
+  display: initial;
   transform-origin: center bottom;
   transition:
     color 800ms $ease-soft,
@@ -103,7 +103,7 @@ $ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
   &[data-rank='near'] {
     color: #ffffff;
     font-size: clamp(2.8rem, 7vw, 5.4rem);
-    font-variation-settings: "wght" 700;
+    font-variation-settings: "wght" 300;
     opacity: 1;
     filter: blur(0);
     transform: translateY(0) scale(1);
@@ -112,7 +112,7 @@ $ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
   &[data-rank='mid'] {
     color: rgba(255, 255, 255, 0.55);
     font-size: clamp(1.8rem, 4.5vw, 3.2rem);
-    font-variation-settings: "wght" 600;
+    font-variation-settings: "wght" 300;
     opacity: 0.78;
     filter: blur(0.3px);
     transform: translateY(0.2em) scale(0.92);
@@ -121,7 +121,7 @@ $ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
   &[data-rank='far'] {
     color: rgba(255, 255, 255, 0.22);
     font-size: clamp(1.3rem, 3.2vw, 2.2rem);
-    font-variation-settings: "wght" 400;
+    font-variation-settings: "wght" 300;
     opacity: 0.5;
     filter: blur(0.6px);
     transform: translateY(0.4em) scale(0.84);
